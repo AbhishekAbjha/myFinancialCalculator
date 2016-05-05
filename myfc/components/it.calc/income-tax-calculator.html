@@ -1,0 +1,99 @@
+<div class="scrollable">
+    <div class="scrollable-content section">
+
+        <div ui-state="activeTab" default="1">
+            <ul class="nav nav-tabs">
+                <li ui-class="{'active': activeTab == 1}">
+                    <a ui-set="{'activeTab': 1}">Quick</a>
+                </li>
+                <li ui-class="{'active': activeTab == 2}">
+                    <a ui-set="{'activeTab': 2}">Advance</a>
+                </li>
+            </ul>
+
+            <div ui-if="activeTab == 1">
+
+                <div class="form-group">
+                    <label>Financial Year</label>
+                    <select class="form-control" ng-model="financialYear">
+                        <option>2015-2016</option>
+                        <option>2016-2017</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-control" ng-model="category">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="senior-citizen">Senior Citizen (>60yrs)</option>
+                        <option value="super-senior-citizen">Super Senior Citizen (>80yrs)</option>
+                    </select>
+                </div>
+
+                <div class="well-sm">
+                    <div class="row">
+                        <div class="col-xs-6"><label class="text-left"><small>Tax Payer:</small></label></div>
+                        <div class="col-xs-6"><label><small>Individual</small></label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6"><label class="text-left"><small>Residential Status:</small></label></div>
+                        <div class="col-xs-6"><label><small>Indian</small></label></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Total Income </label>
+                    <input type="number" class="form-control" placeholder="Enter Income" ng-model="totalIncome">
+                </div>
+
+                <div class="form-group">
+                    <label>Total deduction u/s 80C</label>
+                    <label><small>(Total Max Limit :150000)</small></label>
+                    <input type="number" class="form-control" placeholder="0" ng-model="deduction80C">
+                </div>
+
+                <div class="form-group">
+                    <label>Total other deductions</label>
+                    <input type="number" class="form-control" placeholder="0" ng-model="deductionOther">
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-block" ng-click="calculateIncomeTax()">Calculate</button>
+                </div>
+
+                <div class="well-sm">
+                    <div class="row">
+                        <div class="col-xs-6"><label class="text-left"><small>Total Income:</small></label></div>
+                        <div class="col-xs-6"><label><small>{{totalIncome}}</small></label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6"><label class="text-left"><small>Taxable Income:</small></label></div>
+                        <div class="col-xs-6"><label><small></small></label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6"><label class="text-left"><small>Income Tax:</small></label></div>
+                        <div class="col-xs-6"><label><small></small></label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6"><label class="text-left"><small>Relief u/s 87A:</small></label></div>
+                        <div class="col-xs-6"><label><small></small></label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6"><label class="text-left"><small>Education Cess:</small></label></div>
+                        <div class="col-xs-6"><label><small></small></label></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6"><label class="text-left"><small>Total tax Liability:</small></label></div>
+                        <div class="col-xs-6"><label><small></small></label></div>
+                    </div>
+                </div>
+            </div>
+
+            <div ui-if="activeTab == 2">
+                <label class="label label-info">Coming soon in next version.</label>
+            </div>
+        </div>
+
+    </div>
+</div>
